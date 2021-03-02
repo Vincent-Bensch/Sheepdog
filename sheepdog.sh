@@ -1,6 +1,11 @@
 #!/bin/bash
 
-echo "/n/n Starting Sheepdog v7.4 /n/n"
+echo " "
+echo " "
+echo "Starting Sheepdog v7.6"
+echo " "
+echo " "
+
 
 TAIL_USERNAME="vbensch"
 TAIL_PASSWORD="2GintzUR30SrRBmzvFYxjdn9wMuI1VrmFICFz1NV"
