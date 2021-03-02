@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo " "
-echo "-------------------Starting Sheepdog v14.1-------------------"
+echo "-------------------Starting Sheepdog v15-------------------"
 echo " "
 
 echo "Removing logs"
@@ -13,23 +13,6 @@ echo "Closing old sessions"
 sudo tmux -q kill-session -t GPU
 sudo tmux -q kill-session -t CPU
 
-echo "Setting login"
-
-TAIL_USERNAME="vbensch"
-TAIL_PASSWORD="2GintzUR30SrRBmzvFYxjdn9wMuI1VrmFICFz1NV"
-
-#TAIL_USERNAME="MArL0"
-#TAIL_PASSWORD="HrHBpvF8IR6bYHmXgycWLXf1zJQvrbjNGYANFeGc"
-
-#TAIL_USERNAME="R1chard"
-#TAIL_PASSWORD="YROWQgVZ3YyBrdoPoj9UL2u3XXdGwUwp7CgSvSbj"
-
-#TAIL_USERNAME="WhatWouldKantDo"
-#TAIL_PASSWORD="1WqOtJEYdJ0paXbiCKNg6neXwvqz1flSEdyo2PCh"
-
-GPU_COMMAND=(java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD")
-CPU_COMMAND=(java -jar sheepit.jar -ui text -compute-method CPU -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD")
-
 echo "Starting downloads"
 
 sudo wget -q -O sheepit.jar https://www.sheepit-renderfarm.com/media/applet/client-latest.php
@@ -37,14 +20,21 @@ sudo wget -q -O sheepit.jar https://www.sheepit-renderfarm.com/media/applet/clie
 echo "Collected new sheepit"
 
 sudo wget -q --no-check-certificate --content-disposition --no-cache https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/launch.sh -O launch.sh
+sudo wget -q --no-check-certificate --content-disposition --no-cache https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/hydrant.sh -O hydrant.sh
+sudo wget -q --no-check-certificate --content-disposition --no-cache https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/bark_CPU.sh -O bark_CPU.sh
+sudo wget -q --no-check-certificate --content-disposition --no-cache https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/bark_GPU.sh -O bark_GPU.sh
 
-echo "Collected new launcher"
+echo "Refreshed command files"
+
+source hydrant.sh
+
+echo "Loaded username"
 
 echo " "
 echo "Logging in as: $TAIL_USERNAME"
 echo " "
 
-sudo tmux new-session -d -s GPU '${GPU_COMMAND[@]}'
-sudo tmux new-session -d -s CPU '${CPU_COMMAND}'
+sudo tmux new-session -d -s GPU 'bark_GPU.sh'
+sudo tmux new-session -d -s CPU 'bark_CPU.sh'
 
 echo "Sheepdog Out"
