@@ -2,7 +2,7 @@
 
 echo " "
 echo " "
-echo "Starting Sheepdog v9.3"
+echo "Starting Sheepdog v10"
 echo " "
 echo " "
 
@@ -11,10 +11,23 @@ echo "Removing logs"
 sudo rm -f CPU_log.txt
 sudo rm -f GPU_log.txt
 
+echo "Closing old sessions"
+sudo tmux -q kill-session -t GPU
+sudo tmux -q kill-session -t CPU
+
 echo "Setting login"
 
 TAIL_USERNAME="vbensch"
 TAIL_PASSWORD="2GintzUR30SrRBmzvFYxjdn9wMuI1VrmFICFz1NV"
+
+#TAIL_USERNAME="MArL0"
+#TAIL_PASSWORD="HrHBpvF8IR6bYHmXgycWLXf1zJQvrbjNGYANFeGc"
+
+#TAIL_USERNAME="R1chard"
+#TAIL_PASSWORD="YROWQgVZ3YyBrdoPoj9UL2u3XXdGwUwp7CgSvSbj"
+
+#TAIL_USERNAME="WhatWouldKantDo"
+#TAIL_PASSWORD="1WqOtJEYdJ0paXbiCKNg6neXwvqz1flSEdyo2PCh"
 
 echo "Starting downloads"
 
@@ -32,3 +45,5 @@ sudo tmux new-session -d -s GPU 'java -jar sheepit.jar -ui text -compute-method 
 sudo tmux new-session -d -s CPU 'java -jar sheepit.jar -ui text -compute-method CPU -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD"'
 
 echo "Sheetm Out"
+
+
