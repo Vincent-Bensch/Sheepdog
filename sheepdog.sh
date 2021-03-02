@@ -1,14 +1,16 @@
 #!/bin/bash
 source tail
 
+echo "Starting Sheepdog v6"
+
 sudo rm -f sheepit.jar
 sudo rm -f launch.sh
 
 TAIL_USERNAME = "vbensch"
 TAIL_PASSWORD = "2GintzUR30SrRBmzvFYxjdn9wMuI1VrmFICFz1NV"
 
-wget -O sheepit.jar https://www.sheepit-renderfarm.com/media/applet/client-latest.php
-wget -O launch.sh https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/launch.sh
+sudo wget -O sheepit.jar https://www.sheepit-renderfarm.com/media/applet/client-latest.php
+sudo wget -O launch.sh https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/launch.sh
 
 echo "Logging in as: $TAIL_USERNAME"
 
