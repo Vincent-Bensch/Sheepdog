@@ -10,7 +10,7 @@ echo $TAIL_USERNAME
 echo $TAIL_PASSWORD
 
 wget -O sheepit.jar https://www.sheepit-renderfarm.com/media/applet/client-latest.php
-wget -O sheepdog.sh https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/sheepdog.sh
+wget -O launch.sh https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/launch.sh
 
 echo "Logging in with username: $TAIL_USERNAME"
 echo "Logging in with password: $TAIL_PASSWORD"
