@@ -1,7 +1,6 @@
 #!/bin/bash
-source tail
 
-echo "\n\n Starting Sheepdog v7.1 \n\n"
+echo "/n/n Starting Sheepdog v7.2 /n/n"
 
 TAIL_USERNAME="vbensch"
 TAIL_PASSWORD="2GintzUR30SrRBmzvFYxjdn9wMuI1VrmFICFz1NV"
