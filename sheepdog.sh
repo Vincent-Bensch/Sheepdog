@@ -1,7 +1,7 @@
 #!/bin/bash
 source tail
 
-echo "Starting Sheepdog v7"
+echo "\n\n Starting Sheepdog v7.1 \n\n"
 
 sudo rm -f sheepit.jar
 sudo rm -f launch.sh
