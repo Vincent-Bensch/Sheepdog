@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo " "
-echo "-------------------Starting Sheepdog v13-------------------"
+echo "-------------------Starting Sheepdog v14-------------------"
 echo " "
 
 echo "Removing logs"
@@ -27,8 +27,8 @@ TAIL_PASSWORD="2GintzUR30SrRBmzvFYxjdn9wMuI1VrmFICFz1NV"
 #TAIL_USERNAME="WhatWouldKantDo"
 #TAIL_PASSWORD="1WqOtJEYdJ0paXbiCKNg6neXwvqz1flSEdyo2PCh"
 
-GPU_COMMAND="java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login $TAIL_USERNAME -password $TAIL_PASSWORD"
-CPU_COMMAND="java -jar sheepit.jar -ui text -compute-method CPU -login $TAIL_USERNAME -password $TAIL_PASSWORD"
+GPU_COMMAND={java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD"}
+CPU_COMMAND={java -jar sheepit.jar -ui text -compute-method CPU -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD"}
 
 echo "Starting downloads"
 
@@ -44,9 +44,7 @@ echo " "
 echo "Logging in as: $TAIL_USERNAME"
 echo " "
 
-echo $GPU_COMMAND
-
-sudo tmux new-session -d -s GPU '$GPU_COMMAND'
-sudo tmux new-session -d -s CPU '$CPU_COMMAND'
+sudo tmux new-session -d -s GPU '${GPU_COMMAND[@]}'
+sudo tmux new-session -d -s CPU '${CPU_COMMAND}'
 
 echo "Sheepdog Out"
