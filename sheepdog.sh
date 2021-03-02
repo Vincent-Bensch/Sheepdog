@@ -45,5 +45,3 @@ sudo tmux new-session -d -s GPU 'java -jar sheepit.jar -ui text -compute-method 
 sudo tmux new-session -d -s CPU 'java -jar sheepit.jar -ui text -compute-method CPU -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD"'
 
 echo "Sheetm Out"
-
-
