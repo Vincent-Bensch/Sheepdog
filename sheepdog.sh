@@ -3,7 +3,7 @@ source tail
 
 rm sheepit.jar
 
-echo "READING"
+echo "---------------READING--------------------------"
 
 echo $TAIL_USERNAME
 echo $TAIL_PASSWORD
