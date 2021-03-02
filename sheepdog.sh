@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo " "
-echo "-------------------Starting Sheepdog v15-------------------"
+echo "-------------------Starting Sheepdog v15.1-------------------"
 echo " "
 
 echo "Removing logs"
@@ -34,7 +34,8 @@ echo " "
 echo "Logging in as: $TAIL_USERNAME"
 echo " "
 
-sudo tmux new-session -d -s GPU 'bark_GPU.sh'
-sudo tmux new-session -d -s CPU 'bark_CPU.sh'
+sudo tmux new-session -d -s GPU 'sudo bash bark_GPU.sh'
+sudo tmux new-session -d -s CPU 'sudo bash bark_CPU.sh'
 
 echo "Sheepdog Out"
+echo " "
