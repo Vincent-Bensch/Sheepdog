@@ -6,11 +6,17 @@ echo "Starting Sheepdog v9"
 echo " "
 echo " "
 
+echo "Removing logs"
+
 sudo rm CPU_log.txt
 sudo rm GPU_log.txt
 
+echo "Setting login"
+
 TAIL_USERNAME="vbensch"
 TAIL_PASSWORD="2GintzUR30SrRBmzvFYxjdn9wMuI1VrmFICFz1NV"
+
+echo "Starting downloads"
 
 sudo wget -q -O sheepit.jar https://www.sheepit-renderfarm.com/media/applet/client-latest.php
 sudo wget --no-check-certificate --content-disposition --no-cache -q https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/launch.sh -O launch.sh
