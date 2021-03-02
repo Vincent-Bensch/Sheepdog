@@ -1,9 +1,7 @@
 #!/bin/bash
 
 echo " "
-echo " "
-echo "Starting Sheepdog v11"
-echo " "
+echo "-------------------Starting Sheepdog v11-------------------"
 echo " "
 
 echo "Removing logs"
