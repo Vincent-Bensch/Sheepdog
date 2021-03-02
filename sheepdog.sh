@@ -3,9 +3,6 @@ source tail
 
 echo "\n\n Starting Sheepdog v7.1 \n\n"
 
-sudo rm -f sheepit.jar
-sudo rm -f launch.sh
-
 TAIL_USERNAME="vbensch"
 TAIL_PASSWORD="2GintzUR30SrRBmzvFYxjdn9wMuI1VrmFICFz1NV"
 
