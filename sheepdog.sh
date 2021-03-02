@@ -2,14 +2,14 @@
 
 echo " "
 echo " "
-echo "Starting Sheepdog v9"
+echo "Starting Sheepdog v9.1"
 echo " "
 echo " "
 
 echo "Removing logs"
 
-sudo rm CPU_log.txt
-sudo rm GPU_log.txt
+sudo rm -f CPU_log.txt
+sudo rm -f GPU_log.txt
 
 echo "Setting login"
 
