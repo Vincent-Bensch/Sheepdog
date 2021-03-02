@@ -18,11 +18,11 @@ TAIL_PASSWORD="2GintzUR30SrRBmzvFYxjdn9wMuI1VrmFICFz1NV"
 
 echo "Starting downloads"
 
-sudo wget -q -O sheepit.jar https://www.sheepit-renderfarm.com/media/applet/client-latest.php
+sudo wget -O sheepit.jar https://www.sheepit-renderfarm.com/media/applet/client-latest.php
 
 echo "Collected new sheepit"
 
-sudo wget --no-check-certificate --content-disposition --no-cache -q https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/launch.sh -O launch.sh
+sudo wget --no-check-certificate --content-disposition --no-cache https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/launch.sh -O launch.sh
 
 echo "Collected new launcher"
 
