@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo " "
-echo "-------------------Starting Sheepdog v11-------------------"
+echo "-------------------Starting Sheepdog v11.1-------------------"
 echo " "
 
 echo "Removing logs"
@@ -12,6 +12,8 @@ sudo rm -f GPU_log.txt
 echo "Closing old sessions"
 sudo tmux -q kill-session -t GPU
 sudo tmux -q kill-session -t CPU
+sudo tmux -q kill-session -t TGPU
+sudo tmux -q kill-session -t TCPU
 
 echo "Setting login"
 
@@ -38,6 +40,9 @@ sudo wget -q --no-check-certificate --content-disposition --no-cache https://raw
 echo "Collected new launcher"
 
 echo "Logging in as: $TAIL_USERNAME"
+
+sudo tmux new-session -d -s TGPU 'echo "java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login ${TAIL_USERNAME} -password ${TAIL_PASSWORD}"'
+sudo tmux new-session -d -s TCPU 'echo "java -jar sheepit.jar -ui text -compute-method CPU -login ${TAIL_USERNAME} -password ${TAIL_PASSWORD}"'
 
 sudo tmux new-session -d -s GPU 'java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login ${TAIL_USERNAME} -password ${TAIL_PASSWORD}'
 sudo tmux new-session -d -s CPU 'java -jar sheepit.jar -ui text -compute-method CPU -login ${TAIL_USERNAME} -password ${TAIL_PASSWORD}'
