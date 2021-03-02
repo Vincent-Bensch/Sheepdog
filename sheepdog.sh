@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "/n/n Starting Sheepdog v7.3 /n/n"
+echo "/n/n Starting Sheepdog v7.4 /n/n"
 
 TAIL_USERNAME="vbensch"
 TAIL_PASSWORD="2GintzUR30SrRBmzvFYxjdn9wMuI1VrmFICFz1NV"
@@ -10,7 +10,7 @@ sudo wget --no-check-certificate --content-disposition --no-cache -q https://raw
 
 echo "Logging in as: $TAIL_USERNAME"
 
-sudo java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD"
-sudo java -jar sheepit.jar -ui text -compute-method CPU -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD"
+sudo java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD" > GPU_log.txt
+sudo java -jar sheepit.jar -ui text -compute-method CPU -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD" > CPU_log.txt
 
 echo "Sheepdog Out"
