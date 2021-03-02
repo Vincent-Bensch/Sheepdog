@@ -10,7 +10,7 @@ TAIL_USERNAME="vbensch"
 TAIL_PASSWORD="2GintzUR30SrRBmzvFYxjdn9wMuI1VrmFICFz1NV"
 
 sudo wget -O sheepit.jar https://www.sheepit-renderfarm.com/media/applet/client-latest.php
-sudo wget --no-check-certificate --content-disposition https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/launch.sh
+sudo wget --no-check-certificate --content-disposition --no-cache https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/launch.sh
 
 echo "Logging in as: $TAIL_USERNAME"
 
