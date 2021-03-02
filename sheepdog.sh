@@ -10,7 +10,7 @@ sudo wget --no-check-certificate --content-disposition --no-cache -q https://raw
 
 echo "Logging in as: $TAIL_USERNAME"
 
-sudo java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD" > GPU_log.txt
-sudo java -jar sheepit.jar -ui text -compute-method CPU -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD" > CPU_log.txt
+sudo java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD" > GPU_log.txt &
+sudo java -jar sheepit.jar -ui text -compute-method CPU -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD" > CPU_log.txt &
 
 echo "Sheepdog Out"
