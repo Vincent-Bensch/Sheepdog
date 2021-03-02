@@ -2,7 +2,7 @@
 
 echo " "
 echo " "
-echo "Starting Sheepdog v8"
+echo "Starting Sheepdog v9"
 echo " "
 echo " "
 
