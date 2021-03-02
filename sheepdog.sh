@@ -2,10 +2,12 @@
 
 echo " "
 echo " "
-echo "Starting Sheepdog v7.6"
+echo "Starting Sheepdog v8"
 echo " "
 echo " "
 
+sudo rm CPU_log.txt
+sudo rm GPU_log.txt
 
 TAIL_USERNAME="vbensch"
 TAIL_PASSWORD="2GintzUR30SrRBmzvFYxjdn9wMuI1VrmFICFz1NV"
