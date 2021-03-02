@@ -37,7 +37,9 @@ sudo wget -q --no-check-certificate --content-disposition --no-cache https://raw
 
 echo "Collected new launcher"
 
+echo " "
 echo "Logging in as: $TAIL_USERNAME"
+echo " "
 
 sudo tmux new-session -d -s GPU 'java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login $TAIL_USERNAME -password $TAIL_PASSWORD'
 sudo tmux new-session -d -s CPU 'java -jar sheepit.jar -ui text -compute-method CPU -login $TAIL_USERNAME -password $TAIL_PASSWORD'
