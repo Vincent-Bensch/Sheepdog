@@ -2,7 +2,7 @@
 
 echo " "
 echo " "
-echo "Starting Sheepdog v10"
+echo "Starting Sheepdog v11"
 echo " "
 echo " "
 
@@ -41,7 +41,7 @@ echo "Collected new launcher"
 
 echo "Logging in as: $TAIL_USERNAME"
 
-sudo tmux new-session -d -s GPU 'java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD"'
-sudo tmux new-session -d -s CPU 'java -jar sheepit.jar -ui text -compute-method CPU -login "$TAIL_USERNAME" -password "$TAIL_PASSWORD"'
+sudo tmux new-session -d -s GPU 'java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login ${TAIL_USERNAME} -password ${TAIL_PASSWORD}'
+sudo tmux new-session -d -s CPU 'java -jar sheepit.jar -ui text -compute-method CPU -login ${TAIL_USERNAME} -password ${TAIL_PASSWORD}'
 
 echo "Sheetm Out"
