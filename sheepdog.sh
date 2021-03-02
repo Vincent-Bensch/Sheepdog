@@ -4,7 +4,7 @@ source tail
 sudo rm -f sheepit.jar
 sudo rm -f launch.sh
 
-echo "---------------READING--------------------------"
+echo "---------------READING r5--------------------------"
 
 echo $TAIL_USERNAME
 echo $TAIL_PASSWORD
