@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo " "
-echo "-------------------Starting Sheepdog v12-------------------"
+echo "-------------------Starting Sheepdog v13-------------------"
 echo " "
 
 echo "Removing logs"
@@ -27,6 +27,9 @@ TAIL_PASSWORD="2GintzUR30SrRBmzvFYxjdn9wMuI1VrmFICFz1NV"
 #TAIL_USERNAME="WhatWouldKantDo"
 #TAIL_PASSWORD="1WqOtJEYdJ0paXbiCKNg6neXwvqz1flSEdyo2PCh"
 
+GPU_COMMAND="java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login $TAIL_USERNAME -password $TAIL_PASSWORD"
+CPU_COMMAND="java -jar sheepit.jar -ui text -compute-method CPU -login $TAIL_USERNAME -password $TAIL_PASSWORD"
+
 echo "Starting downloads"
 
 sudo wget -q -O sheepit.jar https://www.sheepit-renderfarm.com/media/applet/client-latest.php
@@ -41,7 +44,9 @@ echo " "
 echo "Logging in as: $TAIL_USERNAME"
 echo " "
 
-sudo tmux new-session -d -s GPU 'java -jar sheepit.jar -ui text -compute-method GPU -gpu CUDA_0 -login $TAIL_USERNAME -password $TAIL_PASSWORD'
-sudo tmux new-session -d -s CPU 'java -jar sheepit.jar -ui text -compute-method CPU -login $TAIL_USERNAME -password $TAIL_PASSWORD'
+echo $GPU_COMMAND
+
+sudo tmux new-session -d -s GPU '$GPU_COMMAND'
+sudo tmux new-session -d -s CPU '$CPU_COMMAND'
 
 echo "Sheepdog Out"
