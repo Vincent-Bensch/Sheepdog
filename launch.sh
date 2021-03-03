@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo " "
-echo "-------------------Starting Launcher v15.1-------------------"
+echo "-------------------Starting Launcher v16-------------------"
 echo " "
 
 echo "Getting current sheepdog"
