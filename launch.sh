@@ -4,12 +4,7 @@ echo " "
 echo "-------------------Starting Launcher v20-------------------"
 echo " "
 
-if [ $# -eq 0 ]
-then
-  PATH = "."
-else
-  PATH = "$1"
-fi
+PATH = "/etc/sheep"
 
 echo "Getting current sheepdog"
 
@@ -17,4 +12,4 @@ sudo wget -q --no-check-certificate --content-disposition --no-cache  https://ra
 
 echo "Calling sheepdog"
 
-sudo bash "$PATH/sheepdog.sh" "$PATH"
+sudo bash "$PATH/sheepdog.sh"

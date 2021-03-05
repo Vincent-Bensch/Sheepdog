@@ -4,12 +4,7 @@ echo " "
 echo "-------------------Starting Sheepdog v20-------------------"
 echo " "
 
-if [ $# -eq 0 ]
-then
-  PATH = "."
-else
-  PATH = "$1"
-fi
+PATH = "/etc/sheep"
 
 echo "Removing logs"
 
@@ -41,8 +36,8 @@ echo " "
 echo "Logging in as: $TAIL_USERNAME"
 echo " "
 
-sudo tmux new-session -d -s GPU "sudo bash $PATH/bark_GPU.sh $PATH"
-sudo tmux new-session -d -s CPU "sudo bash $PATH/bark_CPU.sh $PATH"
+sudo tmux new-session -d -s GPU "sudo bash $PATH/bark_GPU.sh"
+sudo tmux new-session -d -s CPU "sudo bash $PATH/bark_CPU.sh"
 
 echo "Sheepdog Out"
 echo " "

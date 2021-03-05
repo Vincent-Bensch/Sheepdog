@@ -1,11 +1,6 @@
 #!/bin/bash
 
-if [ $# -eq 0 ]
-then
-  PATH = "."
-else
-  PATH = "$1"
-fi
+PATH = "/etc/sheep"
 
 source "$PATH/hydrant.sh"
 
