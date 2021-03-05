@@ -6,12 +6,14 @@ echo " "
 
 echo "Removing logs"
 
-sudo rm -f "/etc/sheep/CPU_log.txt"
-sudo rm -f "/etc/sheep/GPU_log.txt"
+sudo rm -f "/etc/sheep/CPU.log"
+sudo rm -f "/etc/sheep/GPU.log"
+sudo rm -f "/etc/sheep/APU.log"
 
 echo "Closing old sessions"
 sudo tmux -q kill-session -t GPU
 sudo tmux -q kill-session -t CPU
+sudo tmux -q kill-session -t APU
 
 echo "Starting downloads"
 
@@ -34,8 +36,8 @@ echo " "
 echo "Logging in as: $TAIL_USERNAME"
 echo " "
 
-sudo tmux new-session -d -s GPU "sudo bash /etc/sheep/bark_GPU.sh"
-sudo tmux new-session -d -s CPU "sudo bash /etc/sheep/bark_CPU.sh"
+sudo tmux new-session -d -s GPU "sudo bash /etc/sheep/bark_GPU.sh >> /etc/sheep/GPU.log"
+sudo tmux new-session -d -s CPU "sudo bash /etc/sheep/bark_CPU.sh >> /etc/sheep/CPU.log"
 
 echo "Sheepdog Out"
 echo " "
