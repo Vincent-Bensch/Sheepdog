@@ -36,8 +36,8 @@ echo " "
 echo "Logging in as: $TAIL_USERNAME"
 echo " "
 
-sudo tmux new-session -d -s GPU "sudo bash /etc/sheep/bark_GPU.sh >> /etc/sheep/GPU.log"
-sudo tmux new-session -d -s CPU "sudo bash /etc/sheep/bark_CPU.sh >> /etc/sheep/CPU.log"
+sudo tmux new-session -d -s GPU "sudo bash /etc/sheep/bark_GPU.sh"
+sudo tmux new-session -d -s CPU "sudo bash /etc/sheep/bark_CPU.sh"
 
 echo "Sheepdog Out"
 echo " "
