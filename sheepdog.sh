@@ -16,7 +16,7 @@ echo "Starting downloads"
 sudo wget -q -O "/etc/sheep/sheepit.jar" https://www.sheepit-renderfarm.com/media/applet/client-latest.php
 
 echo "Collected new sheepit"
-sudo wget -q --no-check-certificate --content-disposition --no-cache https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/watermains.sh -O "/etc/sheep/watermains.sh"
+sudo wget -q --no-cookies --no-cache https://raw.githubusercontent.com/Vincent-Bensch/Sheepdog/master/watermains.sh -O "/etc/sheep/watermains.sh"
 
 echo "Refreshed command files"
 source "/etc/sheep/hydrant.sh"
