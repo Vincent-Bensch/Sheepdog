@@ -23,12 +23,22 @@ source "/etc/sheep/hydrant.sh"
 
 if [ "$A_SWITCH" = true ] ; then
     echo "Starting Sheepit A"
-    sudo tmux new-session -d -s Sheepit_A "java -jar /etc/sheep/sheepit.jar -ui text $A_COMPUTE -memory $A_MEMORY -cores $A_CORES -priority $A_PRIORITY -login $A_USERNAME -password $A_PASSWORD -hostname $A_HOSTNAME -rendertime $A_TIME -shared-zip /etc/sheep/TEMP"
+    sudo tmux new-session -d -s Sheepit_A "sudo java -jar /etc/sheep/sheepit.jar \
+	-ui text \
+    $A_COMPUTE \
+	-memory $A_MEMORY \
+	-cores $A_CORES \
+	-priority $A_PRIORITY \
+	-login $A_USERNAME \
+	-password $A_PASSWORD \
+	-hostname $A_HOSTNAME \
+	-rendertime $A_TIME \
+	-shared-zip /etc/sheep/TEMP"
 fi
 
 if [ "$B_SWITCH" = true ] ; then
     echo "Starting Sheepit B"
-    sudo tmux new-session -d -s Sheepit_B "java -jar /etc/sheep/sheepit.jar \
+    sudo tmux new-session -d -s Sheepit_B "sudo java -jar /etc/sheep/sheepit.jar \
 	-ui text \
     $B_COMPUTE \
 	-memory $B_MEMORY \
@@ -43,7 +53,7 @@ fi
 
 if [ "$C_SWITCH" = true ] ; then
     echo "Starting Sheepit C"
-    sudo tmux new-session -d -s Sheepit_C "java -jar /etc/sheep/sheepit.jar \
+    sudo tmux new-session -d -s Sheepit_C "sudo java -jar /etc/sheep/sheepit.jar \
 	-ui text \
     $C_COMPUTE \
 	-memory $C_MEMORY \
@@ -58,7 +68,7 @@ fi
 
 if [ "$D_SWITCH" = true ] ; then
     echo "Starting Sheepit D"
-    sudo tmux new-session -d -s Sheepit_D "java -jar /etc/sheep/sheepit.jar \
+    sudo tmux new-session -d -s Sheepit_D "sudo java -jar /etc/sheep/sheepit.jar \
 	-ui text \
     $D_COMPUTE \
 	-memory $D_MEMORY \
@@ -73,7 +83,7 @@ fi
 
 if [ "$E_SWITCH" = true ] ; then
     echo "Starting Sheepit E"
-    sudo tmux new-session -d -s Sheepit_E "java -jar /etc/sheep/sheepit.jar \
+    sudo tmux new-session -d -s Sheepit_E "sudo java -jar /etc/sheep/sheepit.jar \
 	-ui text \
     $E_COMPUTE \
 	-memory $E_MEMORY \
@@ -88,7 +98,7 @@ fi
 
 if [ "$F_SWITCH" = true ] ; then
     echo "Starting Sheepit F"
-    sudo tmux new-session -d -s Sheepit_F "java -jar /etc/sheep/sheepit.jar \
+    sudo tmux new-session -d -s Sheepit_F "sudo java -jar /etc/sheep/sheepit.jar \
 	-ui text \
     $F_COMPUTE \
 	-memory $F_MEMORY \
@@ -103,7 +113,7 @@ fi
 
 if [ "$G_SWITCH" = true ] ; then
     echo "Starting Sheepit G"
-    sudo tmux new-session -d -s Sheepit_G "java -jar /etc/sheep/sheepit.jar \
+    sudo tmux new-session -d -s Sheepit_G "sudo java -jar /etc/sheep/sheepit.jar \
 	-ui text \
     $G_COMPUTE \
 	-memory $G_MEMORY \
@@ -118,7 +128,7 @@ fi
 
 if [ "$H_SWITCH" = true ] ; then
     echo "Starting Sheepit H"
-    sudo tmux new-session -d -s Sheepit_H "java -jar /etc/sheep/sheepit.jar \
+    sudo tmux new-session -d -s Sheepit_H "sudo java -jar /etc/sheep/sheepit.jar \
 	-ui text \
     $H_COMPUTE \
 	-memory $H_MEMORY \
