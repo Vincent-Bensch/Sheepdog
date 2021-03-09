@@ -23,17 +23,7 @@ source "/etc/sheep/hydrant.sh"
 
 if [ "$A_SWITCH" = true ] ; then
     echo "Starting Sheepit A"
-    sudo tmux new-session -d -s Sheepit_A "java -jar /etc/sheep/sheepit.jar \
-	-ui text \
-    $A_COMPUTE \
-	-memory $A_MEMORY \
-	-cores $A_CORES \
-	-priority $A_PRIORITY \
-	-login $A_USERNAME \
-	-password $A_PASSWORD \
-	-hostname $A_HOSTNAME \
-	-rendertime $A_TIME \
-	-shared-zip /etc/sheep/TEMP"
+    sudo tmux new-session -d -s Sheepit_A "java -jar /etc/sheep/sheepit.jar -ui text $A_COMPUTE -memory $A_MEMORY -cores $A_CORES -priority $A_PRIORITY -login $A_USERNAME -password $A_PASSWORD -hostname $A_HOSTNAME -rendertime $A_TIME -shared-zip /etc/sheep/TEMP"
 fi
 
 if [ "$B_SWITCH" = true ] ; then
