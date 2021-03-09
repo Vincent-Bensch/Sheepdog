@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo " "
-echo "-------------------Starting Sheepdog v21-------------------"
+echo "-------------------Starting Sheepdog v22-------------------"
 echo " "
 
 echo "Cycling TEMP_DIR"
