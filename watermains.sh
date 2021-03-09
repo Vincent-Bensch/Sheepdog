@@ -17,3 +17,7 @@ E_PASSWORD="cT3IAlE1ogm002M9NjDYoINfQgELgUreLMQ6ivvm"
 
 F_USERNAME="B1golo"
 F_PASSWORD="dyZTBL7ILL0iKwLDLV3m9LVvhpq5BeYE9HVDyTrn"
+
+GPU_COMMAND="-compute-method GPU -gpu CUDA_0"
+CPU_COMMAND="-compute-method CPU"
+APU_COMMAND="-compute-method CPU_GPU -gpu CUDA_0"
